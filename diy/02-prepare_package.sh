@@ -9,23 +9,23 @@ rm -rf feeds/packages/lang/node
 git clone https://$github/sbwml/feeds_packages_lang_node-prebuilt feeds/packages/lang/node -b packages-24.10
 
 # default settings
-git clone https://$github/QuickWrt/default-settings package/new/default-settings -b openwrt-24.10
+git clone https://$github/Kwonelee/default-settings package/new/default-settings -b openwrt-24.10
 
 # wwan
 git clone https://$github/sbwml/wwan-packages package/new/wwan --depth=1
 
 # luci-app-filemanager
-rm -rf feeds/luci/applications/luci-app-filemanager
-git clone https://$github/sbwml/luci-app-filemanager package/new/luci-app-filemanager
+#rm -rf feeds/luci/applications/luci-app-filemanager
+#git clone https://$github/sbwml/luci-app-filemanager package/new/luci-app-filemanager
 
 # luci-app-quickfile
-git clone https://$github/sbwml/luci-app-quickfile package/new/quickfile
+#git clone https://$github/sbwml/luci-app-quickfile package/new/quickfile
 
 # luci-app-airplay2
-git clone https://$github/sbwml/luci-app-airplay2 package/new/airplay2
+#git clone https://$github/sbwml/luci-app-airplay2 package/new/airplay2
 
 # luci-app-webdav
-git clone https://$github/sbwml/luci-app-webdav package/new/luci-app-webdav
+#git clone https://$github/sbwml/luci-app-webdav package/new/luci-app-webdav
 
 # ddns - fix boot
 sed -i '/boot()/,+2d' feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
@@ -83,18 +83,18 @@ sed -i 's/0666/0644/g;s/0777/0755/g' feeds/packages/net/samba4/files/samba.confi
 sed -i 's/0666/0644/g;s/0777/0755/g' feeds/packages/net/samba4/files/smb.conf.template
 
 # zerotier
-rm -rf feeds/packages/net/zerotier
-git clone https://$github/sbwml/feeds_packages_net_zerotier feeds/packages/net/zerotier
+#rm -rf feeds/packages/net/zerotier
+#git clone https://$github/sbwml/feeds_packages_net_zerotier feeds/packages/net/zerotier
 
 # aria2 & ariaNG
-rm -rf feeds/packages/net/ariang
-rm -rf feeds/luci/applications/luci-app-aria2
-git clone https://$github/sbwml/ariang-nginx package/new/ariang-nginx
-rm -rf feeds/packages/net/aria2
-git clone https://$github/sbwml/feeds_packages_net_aria2 -b 22.03 feeds/packages/net/aria2
+#rm -rf feeds/packages/net/ariang
+#rm -rf feeds/luci/applications/luci-app-aria2
+#git clone https://$github/sbwml/ariang-nginx package/new/ariang-nginx
+#rm -rf feeds/packages/net/aria2
+#git clone https://$github/sbwml/feeds_packages_net_aria2 -b 22.03 feeds/packages/net/aria2
 
 # airconnect
-git clone https://$github/sbwml/luci-app-airconnect package/new/airconnect --depth=1
+#git clone https://$github/sbwml/luci-app-airconnect package/new/airconnect --depth=1
 
 # netkit-ftp
 git clone https://$github/sbwml/package_new_ftp package/new/ftp
@@ -103,34 +103,34 @@ git clone https://$github/sbwml/package_new_ftp package/new/ftp
 git clone https://$github/sbwml/package_new_nethogs package/new/nethogs
 
 # SSRP & Passwall
-rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
-git clone https://$github/sbwml/openwrt_helloworld package/new/helloworld -b v5
+#rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+#git clone https://$github/sbwml/openwrt_helloworld package/new/helloworld -b v5
 
 # openlist
-git clone https://$github/sbwml/luci-app-openlist2 package/new/openlist --depth=1
+#git clone https://$github/sbwml/luci-app-openlist2 package/new/openlist --depth=1
 
 # netdata
 sed -i 's/syslog/none/g' feeds/packages/admin/netdata/files/netdata.conf
 
 # qBittorrent
-git clone https://$github/sbwml/luci-app-qbittorrent package/new/qbittorrent --depth=1
+#git clone https://$github/sbwml/luci-app-qbittorrent package/new/qbittorrent --depth=1
 
 # unblockneteasemusic
-git clone https://$github/UnblockNeteaseMusic/luci-app-unblockneteasemusic package/new/luci-app-unblockneteasemusic --depth=1
-sed -i 's/解除网易云音乐播放限制/网易云音乐解锁/g' package/new/luci-app-unblockneteasemusic/root/usr/share/luci/menu.d/luci-app-unblockneteasemusic.json
+#git clone https://$github/UnblockNeteaseMusic/luci-app-unblockneteasemusic package/new/luci-app-unblockneteasemusic --depth=1
+#sed -i 's/解除网易云音乐播放限制/网易云音乐解锁/g' package/new/luci-app-unblockneteasemusic/root/usr/share/luci/menu.d/luci-app-unblockneteasemusic.json
 
 # Theme
-git clone https://$github/QuickWrt/luci-theme-argon package/new/luci-theme-argon --depth=1
-curl -s $mirror/openwrt/img/bg.webp > package/new/luci-theme-argon/luci-theme-argon/htdocs/luci-static/argon/img/bg.webp
-sed -i "s/#5e72e4/#31a1a1/g" package/new/luci-theme-argon/luci-app-argon-config/root/etc/config/argon
-sed -i "s/#483d8b/#31a1a1/g" package/new/luci-theme-argon/luci-app-argon-config/root/etc/config/argon
-sed -i "s/0.2/0.5/g" package/new/luci-theme-argon/luci-app-argon-config/root/etc/config/argon
+git clone https://$github/Kwonelee/luci-theme-argon package/new/luci-theme-argon --depth=1
+#curl -s $mirror/openwrt/img/bg.webp > package/new/luci-theme-argon/luci-theme-argon/htdocs/luci-static/argon/img/bg.webp
+#sed -i "s/#5e72e4/#31a1a1/g" package/new/luci-theme-argon/luci-app-argon-config/root/etc/config/argon
+#sed -i "s/#483d8b/#31a1a1/g" package/new/luci-theme-argon/luci-app-argon-config/root/etc/config/argon
+#sed -i "s/0.2/0.5/g" package/new/luci-theme-argon/luci-app-argon-config/root/etc/config/argon
 
 # Mosdns
-git clone https://$github/sbwml/luci-app-mosdns -b v5 package/new/mosdns --depth=1
+#git clone https://$github/sbwml/luci-app-mosdns -b v5 package/new/mosdns --depth=1
 
 # OpenAppFilter
-git clone https://$github/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter -b v6
+#git clone https://$github/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter -b v6
 
 # iperf3
 sed -i "s/D_GNU_SOURCE/D_GNU_SOURCE -funroll-loops/g" feeds/packages/net/iperf3/Makefile
@@ -140,7 +140,7 @@ sed -i 's/services/network/g' feeds/luci/applications/luci-app-nlbwmon/root/usr/
 sed -i 's/services/network/g' feeds/luci/applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js
 
 # mentohust
-git clone https://$github/sbwml/luci-app-mentohust package/new/mentohust
+#git clone https://$github/sbwml/luci-app-mentohust package/new/mentohust
 
 # custom packages
 rm -rf feeds/packages/utils/coremark
@@ -156,8 +156,8 @@ sed -i 's,frp 服务器,Frp 服务器,g' feeds/luci/applications/luci-app-frps/p
 sed -i 's,frp 客户端,Frp 客户端,g' feeds/luci/applications/luci-app-frpc/po/zh_Hans/frpc.po
 
 # luci-app-sqm
-rm -rf feeds/luci/applications/luci-app-sqm
-git clone https://$gitea/zhao/luci-app-sqm feeds/luci/applications/luci-app-sqm
+#rm -rf feeds/luci/applications/luci-app-sqm
+#git clone https://$gitea/zhao/luci-app-sqm feeds/luci/applications/luci-app-sqm
 
 # unzip
 rm -rf feeds/packages/utils/unzip
