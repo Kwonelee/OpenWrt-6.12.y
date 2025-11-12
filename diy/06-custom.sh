@@ -1,5 +1,8 @@
 #!/bin/bash -e
 
+ # 应用 GCC 补丁
+curl -s $mirror/openwrt/patch/generic-24.10/202-toolchain-gcc-add-support-for-GCC-15.patch | patch -p1
+
 # 集成设备无线
 mkdir -p package/base-files/files/lib/firmware/brcm
 cp -a $GITHUB_WORKSPACE/configfiles/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
