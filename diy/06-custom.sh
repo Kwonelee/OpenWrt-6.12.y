@@ -15,11 +15,11 @@ echo -e "\\ndefine Device/firefly_station-m2
   DEVICE_DTS := rk3566-roc-pc
   SUPPORTED_DEVICES += firefly,rk3566-roc-pc firefly,station-m2
   UBOOT_DEVICE_NAME := generic-rk3568
-  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core
+  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-r8169
 endef
 TARGET_DEVICES += firefly_station-m2" >> target/linux/rockchip/image/armv8.mk
 
-sed -i '/BUILD_DEVICES:=.*linkease_easepi-r1/s/linkease_easepi-r1 \\/linkease_easepi-r1 \\\n    firefly_station-m2/' package/boot/uboot-rockchip/Makefile
+sed -i 's/linkease_easepi-r1/firefly_station-m2/g' package/boot/uboot-rockchip/Makefile
 
 # 复制dts到files/arch/arm64/boot/dts/rockchip
 mkdir -p target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/
