@@ -10,7 +10,7 @@
 +	rk3399-nanopi-r4se.dtb
 +
 +dtb-$(CONFIG_ROCKCHIP_RK3566) += \
-+	rk3566-nanopi-r3s.dtb \
++	rk3566-roc-pc.dtb \
 +
 +dtb-$(CONFIG_ROCKCHIP_RK3568) += \
 +	rk3568-armsom-sige3.dtb \
