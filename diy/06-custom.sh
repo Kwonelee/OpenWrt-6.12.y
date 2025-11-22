@@ -15,7 +15,7 @@ echo -e "\\ndefine Device/firefly_station-m2
   DEVICE_DTS := rk3566-roc-pc
   SUPPORTED_DEVICES += firefly,rk3566-roc-pc firefly,station-m2
   UBOOT_DEVICE_NAME := generic-rk3568
-  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-r8169
+  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core
 endef
 TARGET_DEVICES += firefly_station-m2" >> target/linux/rockchip/image/armv8.mk
 
