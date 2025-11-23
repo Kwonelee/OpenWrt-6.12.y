@@ -107,7 +107,7 @@ git clone https://$github/sbwml/package_new_nethogs package/new/nethogs
 #git clone https://$github/sbwml/openwrt_helloworld package/new/helloworld -b v5
 
 # openlist
-#git clone https://$github/sbwml/luci-app-openlist2 package/new/openlist --depth=1
+git clone https://$github/sbwml/luci-app-openlist2 package/new/openlist --depth=1
 
 # netdata
 sed -i 's/syslog/none/g' feeds/packages/admin/netdata/files/netdata.conf
