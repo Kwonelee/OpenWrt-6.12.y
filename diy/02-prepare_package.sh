@@ -11,6 +11,9 @@ git clone https://$github/sbwml/feeds_packages_lang_node-prebuilt feeds/packages
 # default settings
 git clone https://$github/Kwonelee/default-settings package/new/default-settings -b openwrt-24.10
 
+# linkease
+git clone https://github.com/sbwml/package_new_istore package/new/linkease
+
 # wwan
 git clone https://$github/sbwml/wwan-packages package/new/wwan --depth=1
 
