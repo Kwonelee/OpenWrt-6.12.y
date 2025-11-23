@@ -20,7 +20,8 @@ jobs:
 
         FILE_PATH="./armv8/.config"
         if [ -f "$FILE_PATH" ] && [ -s "$FILE_PATH" ]; then
-           content=$(cat ${GITHUB_WORKSPACE}/armv8/config-gcc)
+           content=$(cat ${GITHUB_WORKSPACE}/armv8/config-gcc \
+                     ${GITHUB_WORKSPACE}/armv8/config-package)
            configdata=$(echo "$content" | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')
            echo -e "\\n$configdata" >> ./armv8/.config
            # 清除.config配置文件里面重复的配置项
