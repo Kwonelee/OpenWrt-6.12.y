@@ -145,6 +145,15 @@ sed -i "s/D_GNU_SOURCE/D_GNU_SOURCE -funroll-loops/g" feeds/packages/net/iperf3/
 # custom packages
 rm -rf feeds/packages/utils/coremark
 git clone https://$github/sbwml/openwrt_pkgs package/new/custom --depth=1
+rm -rf package/new/custom/luci-app-adguardhome
+rm -rf feeds/packages/net/adguardhome
+sed -i 's/admin/OpenWrt/g' package/new/custom/luci-app-filebrowser-go/root/etc/config/filebrowser
+sed -i 's/services/nas/g' package/new/custom/luci-app-filebrowser-go/luasrc/view/filebrowser/filebrowser_log.htm
+sed -i 's/services/nas/g' package/new/custom/luci-app-filebrowser-go/luasrc/view/filebrowser/filebrowser_status.htm
+sed -i 's/services/nas/g' package/new/custom/luci-app-filebrowser-go/luasrc/controller/filebrowser.lua
+sed -i 's/_("File Browser"), 100/_("File Browser"), 1/' package/new/custom/luci-app-filebrowser-go/luasrc/controller/filebrowser.lua
+sed -i '/local page.*filebrowser.*1)/i\
+entry({"admin", "nas"}, firstchild(), "NAS", 44).dependent = false' package/new/custom/luci-app-filebrowser-go/luasrc/controller/filebrowser.lua
 
 # luci-compat - fix translation
 sed -i 's/<%:Up%>/<%:Move up%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
